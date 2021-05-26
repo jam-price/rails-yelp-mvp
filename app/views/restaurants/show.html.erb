@@ -2,4 +2,16 @@
 <p> <%= @restaurant.address %></p>
 <p> <%= @restaurant.phone_number %></p>
 
+<h3>Reviews</h3>
+
+<% @restaurant.reviews.each do |review| %>
+    <div>
+        <p> <%= review.content %> </p>
+        <p> <%= "🍔" * review.rating %>  </p>
+    </div>
+<% end %>
+
+<h3>Add a Review</h3>
+<%= render 'form' %>
+
 <%= link_to 'back', restaurants_path  %>
